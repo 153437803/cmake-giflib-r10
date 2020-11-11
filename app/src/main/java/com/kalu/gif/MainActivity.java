@@ -1,6 +1,7 @@
 package com.kalu.gif;
 
 import android.Manifest;
+import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,11 +9,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import lib.kalu.gif.GifManager;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private ImageView mIvShow;
     private GifManager mGifPlayer;
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         mGifPlayer.setOnGifListener(new GifManager.OnGifListener() {
             @Override
             public void start() {
-                Log.i("DMUI", "gif start");
+                Log.e("test", "gif start");
             }
 
             @Override
@@ -44,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void end() {
-                Log.i("DMUI", "gif end");
+                Log.e("test", "gif end");
             }
         });
         findViewById(R.id.btn_one).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mGifPlayer.assetPlay(false, MainActivity.this, "demo2.gif");
+                mGifPlayer.assetPlay(false, MainActivity.this, "demo1.gif");
 //                // 外部目录play
 //                File file = new File(Environment.getExternalStorageDirectory(), "1/test.gif");
 //                if (file.exists()) {

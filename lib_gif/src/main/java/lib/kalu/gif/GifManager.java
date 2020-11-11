@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.HandlerThread;
 
 import androidx.annotation.Keep;
+import androidx.annotation.NonNull;
 
 @Keep
 public final class GifManager {
@@ -18,7 +19,7 @@ public final class GifManager {
     public interface OnGifListener {
         void start();
 
-        void draw(Bitmap bitmap);
+        void draw(@NonNull Bitmap bitmap);
 
         void end();
     }
@@ -158,5 +159,4 @@ public final class GifManager {
     private native void native_stop(long ptr);
 
     private native void native_release(long ptr);
-
 }
